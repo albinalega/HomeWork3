@@ -11,9 +11,11 @@ class ViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet var screenWithColor: UIView!
+    
     @IBOutlet var redOpacityLevel: UILabel!
     @IBOutlet var greenOpacityLevel: UILabel!
     @IBOutlet var blueOpacityLevel: UILabel!
+    
     @IBOutlet var redColorSlider: UISlider!
     @IBOutlet var greenColorSlider: UISlider!
     @IBOutlet var blueColorSlider: UISlider!
@@ -26,24 +28,24 @@ class ViewController: UIViewController {
     
     //MARK: - IBActions
     @IBAction func redSliderAction() {
-        let roundingTheRedValue = round(redColorSlider.value * 100) / 100
-        redOpacityLevel.text = roundingTheRedValue.formatted()
+        redColorSlider.value = round(redColorSlider.value * 100) / 100
+        redOpacityLevel.text = redColorSlider.value.formatted()
         screenWithColor.backgroundColor = .red
         screenWithColor.alpha = CGFloat(redColorSlider.value)
         blendColor()
     }
     
     @IBAction func greenSliderAction() {
-        let roundingTheGreenValue = round(greenColorSlider.value * 100) / 100
-        greenOpacityLevel.text = roundingTheGreenValue.formatted()
+        greenColorSlider.value = round(greenColorSlider.value * 100) / 100
+        greenOpacityLevel.text = greenColorSlider.value.formatted()
         screenWithColor.backgroundColor = .green
         screenWithColor.alpha = CGFloat(greenColorSlider.value)
         blendColor()
     }
     
     @IBAction func blueSliderAction() {
-        let roundingTheBlueValue = round(blueColorSlider.value * 100) / 100
-        blueOpacityLevel.text = roundingTheBlueValue.formatted()
+        blueColorSlider.value = round(blueColorSlider.value * 100) / 100
+        blueOpacityLevel.text = blueColorSlider.value.formatted()
         screenWithColor.backgroundColor = .blue
         screenWithColor.alpha = CGFloat(blueColorSlider.value)
         blendColor()
