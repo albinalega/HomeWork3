@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="lqG-kg-AMT">
             <objects>
-                <viewController id="ecK-ln-zWE" sceneMemberID="viewController">
+                <viewController id="ecK-ln-zWE" customClass="MainViewController" customModule="HomeWork3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KLc-ej-TY7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                     <navigationItem key="navigationItem" id="QN4-YA-xkB">
                         <barButtonItem key="rightBarButtonItem" image="square.and.pencil" catalog="system" id="xuk-fF-bu0">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="FJr-3s-4TQ"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="FJr-3s-4TQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -30,16 +30,16 @@
             </objects>
             <point key="canvasLocation" x="-1.875" y="66.549295774647888"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HomeWork3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SettingsViewController" customModule="HomeWork3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="Ccx-hZ-2NU">
-                                <rect key="frame" x="16" y="287" width="51" height="107.5"/>
+                                <rect key="frame" x="16" y="243" width="51" height="107.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Red:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NcS-Op-M2P">
                                         <rect key="frame" x="0.0" y="0.0" width="34.5" height="20.5"/>
@@ -62,14 +62,14 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0NK-LG-vrV">
-                                <rect key="frame" x="16" y="84" width="288" height="181"/>
+                                <rect key="frame" x="16" y="40" width="288" height="181"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="181" id="ojc-p1-Fbi"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="drX-qc-0fA">
-                                <rect key="frame" x="90" y="287" width="34.5" height="107.5"/>
+                                <rect key="frame" x="90" y="243" width="34.5" height="107.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCD-cb-LCa">
                                         <rect key="frame" x="0.0" y="0.0" width="34.5" height="20.5"/>
@@ -92,23 +92,23 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="yss-vs-SSJ">
-                                <rect key="frame" x="152" y="281" width="152" height="118"/>
+                                <rect key="frame" x="152" y="237" width="152" height="118"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="0yE-jl-43F">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="0yE-jl-43F">
                                         <rect key="frame" x="-2" y="0.0" width="156" height="31"/>
                                         <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                         <connections>
                                             <action selector="sliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="Oh5-wp-17I"/>
                                         </connections>
                                     </slider>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="y6X-bm-JYP">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="y6X-bm-JYP">
                                         <rect key="frame" x="-2" y="44" width="156" height="31"/>
                                         <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
                                         <connections>
                                             <action selector="sliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="sTs-bz-yB1"/>
                                         </connections>
                                     </slider>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Mlt-qV-IrC">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Mlt-qV-IrC">
                                         <rect key="frame" x="-2" y="88" width="156" height="31"/>
                                         <connections>
                                             <action selector="sliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="8O0-W3-mMA"/>
@@ -118,12 +118,14 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cb5-h6-sxM">
                                 <rect key="frame" x="112" y="461" width="96" height="44"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button">
+                                <buttonConfiguration key="configuration" style="plain" title="Done">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="doneButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="CxD-LU-gMx"/>
+                                    <action selector="doneButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Ds-fj-0no"/>
+                                    <segue destination="kSz-cS-Tkn" kind="unwind" unwindAction="unwindFor:" id="Mjc-rc-5GB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -157,6 +159,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="kSz-cS-Tkn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="727.5" y="66.549295774647888"/>
         </scene>

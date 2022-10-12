@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class SettingsViewController: UIViewController { // нужно подписать под протокол
     
     // MARK: - IBOutlets
     @IBOutlet var colorView: UIView!
@@ -20,12 +20,13 @@ class ViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
-    
+    var colorOfView: UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         colorView.layer.cornerRadius = 15
-        navigationItem.hidesBackButton = true
+//        colorView.backgroundColor = colorOfView
+       // redSlider.value = colorOfView.
         blendColor()
         setValue()
     }
@@ -36,9 +37,10 @@ class ViewController: UIViewController {
         setValue()
     }
     
-    @IBAction func doneButtonPressed() {
-        dismiss(animated: true)
-    }
+//    @IBAction func unwind(for segue: UIStoryboardSegue) {
+//        guard let settingsVC = segue.source as? SettingsViewController else { return }
+//
+//    }
     
     
     

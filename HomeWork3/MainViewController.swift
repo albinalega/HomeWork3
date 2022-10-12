@@ -1,0 +1,40 @@
+//
+//  ShowOfColorViewController.swift
+//  HomeWork3
+//
+//  Created by Альбина Лега on 12/10/2022.
+//
+
+import UIKit
+
+protocol SettingsViewControllerDelegate {
+    func setColor(red: CGFloat, green: CGFloat, blue: CGFloat)
+}
+
+class MainViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+//        view.backgroundColor =
+
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let ChangeOfColorVC = segue.destination as? ChangeOfColorViewController else { return }
+//        ChangeOfColorVC.colorOfView = view.backgroundColor
+//    }
+
+
+}
+
+// MARK: - SettingsViewControllerDelegate
+extension MainViewController: SettingsViewControllerDelegate {
+    func setColor(red: CGFloat, green: CGFloat, blue: CGFloat) {
+        view.backgroundColor = UIColor(
+            red: red,
+            green: green,
+            blue: blue,
+            alpha: 1
+        )
+    }
+}
