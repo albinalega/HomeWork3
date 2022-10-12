@@ -13,19 +13,20 @@ protocol SettingsViewControllerDelegate {
 
 class MainViewController: UIViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor =
 
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let settingsVC = segue.destination as? SettingsViewController else { return }
-        //ChangeOfColorVC.colorOfView = view.backgroundColor
+        settingsVC.colorOfView = view.backgroundColor
         settingsVC.delegate = self
     }
-
-
+    
+    
+    
 }
 
 // MARK: - SettingsViewControllerDelegate
@@ -39,3 +40,4 @@ extension MainViewController: SettingsViewControllerDelegate {
         )
     }
 }
+

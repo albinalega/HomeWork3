@@ -20,16 +20,22 @@ final class SettingsViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
+    var red: CGFloat!
+    var green: CGFloat!
+    var blue: CGFloat!
+    var alpha: CGFloat!
+    
     var delegate: SettingsViewControllerDelegate!
-    //var colorOfView: UIColor!
+    var colorOfView: UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         colorView.layer.cornerRadius = 15
 //        colorView.backgroundColor = colorOfView
-       // redSlider.value = colorOfView.
+        // redSlider.value
         blendColor()
         setValue()
+
     }
     
     //MARK: - IBActions
@@ -54,6 +60,7 @@ final class SettingsViewController: UIViewController {
     
     
     
+    
     //MARK: - Private func
     private func blendColor() {
         colorView.backgroundColor = UIColor(
@@ -70,4 +77,16 @@ final class SettingsViewController: UIViewController {
         blueLabel.text = String(format: "%.2f", blueSlider.value)
     }
     
+}
+
+extension UIColor {
+    var red: CGFloat {
+        CIColor(color: self).red
+    }
+    var green: CGFloat {
+        CIColor(color: self).green
+    }
+    var blue: CGFloat {
+        CIColor(color: self).blue
+    }
 }
