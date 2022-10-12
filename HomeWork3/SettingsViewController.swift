@@ -20,23 +20,22 @@ final class SettingsViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
-    var red: CGFloat!
-    var green: CGFloat!
-    var blue: CGFloat!
-    var alpha: CGFloat!
-    
+    // MARK: - Properties
     var delegate: SettingsViewControllerDelegate!
     var colorOfView: UIColor!
     
+    // MARK: - Override methods
     override func viewDidLoad() {
         super.viewDidLoad()
         colorView.layer.cornerRadius = 15
-        blendColor()
-        setValue()
+        colorView.backgroundColor = colorOfView
+        
         redSlider.value = Float(colorOfView.red)
         greenSlider.value = Float(colorOfView.green)
         blueSlider.value = Float(colorOfView.blue)
-        colorView.backgroundColor = colorOfView
+        
+        blendColor()
+        setValue()
     }
     
     
@@ -56,7 +55,7 @@ final class SettingsViewController: UIViewController {
     }
     
     
-    //MARK: - Private func
+    //MARK: - Private methods
     private func blendColor() {
         colorView.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
@@ -71,15 +70,9 @@ final class SettingsViewController: UIViewController {
         greenLabel.text = String(format: "%.2f", greenSlider.value)
         blueLabel.text = String(format: "%.2f", blueSlider.value)
     }
-    
-//    private func dkd(redSlider: UISlider, greenSlider: UISlider, blueSlider: UISlider) {
-//        redSlider.value = Float(red)
-//        greenSlider.value = Float(green)
-//        blueSlider.value = Float(blue)
-//    }
-    
 }
 
+// MARK: - Extensions
 extension UIColor {
     var red: CGFloat {
         CIColor(color: self).red
