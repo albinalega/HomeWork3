@@ -31,12 +31,14 @@ final class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         colorView.layer.cornerRadius = 15
-//        colorView.backgroundColor = colorOfView
-        // redSlider.value
         blendColor()
         setValue()
-
+        redSlider.value = Float(colorOfView.red)
+        greenSlider.value = Float(colorOfView.green)
+        blueSlider.value = Float(colorOfView.blue)
+        colorView.backgroundColor = colorOfView
     }
+    
     
     //MARK: - IBActions
     @IBAction func sliderAction() {
@@ -52,13 +54,6 @@ final class SettingsViewController: UIViewController {
         )
         dismiss(animated: true)
     }
-    
-//    @IBAction func unwind(for segue: UIStoryboardSegue) {
-//        guard let settingsVC = segue.source as? SettingsViewController else { return }
-//
-//    }
-    
-    
     
     
     //MARK: - Private func
@@ -76,6 +71,12 @@ final class SettingsViewController: UIViewController {
         greenLabel.text = String(format: "%.2f", greenSlider.value)
         blueLabel.text = String(format: "%.2f", blueSlider.value)
     }
+    
+//    private func dkd(redSlider: UISlider, greenSlider: UISlider, blueSlider: UISlider) {
+//        redSlider.value = Float(red)
+//        greenSlider.value = Float(green)
+//        blueSlider.value = Float(blue)
+//    }
     
 }
 
