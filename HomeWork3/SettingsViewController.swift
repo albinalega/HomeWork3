@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SettingsViewController: UIViewController { // нужно подписать под протокол
+final class SettingsViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet var colorView: UIView!
@@ -20,7 +20,8 @@ final class SettingsViewController: UIViewController { // нужно подпи�
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
-    var colorOfView: UIColor!
+    var delegate: SettingsViewControllerDelegate!
+    //var colorOfView: UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,15 @@ final class SettingsViewController: UIViewController { // нужно подпи�
     @IBAction func sliderAction() {
         blendColor()
         setValue()
+    }
+    
+    @IBAction func doneButtonePressed() {
+        delegate.setColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value)
+        )
+        dismiss(animated: true)
     }
     
 //    @IBAction func unwind(for segue: UIStoryboardSegue) {

@@ -124,8 +124,7 @@
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="doneButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Ds-fj-0no"/>
-                                    <segue destination="kSz-cS-Tkn" kind="unwind" unwindAction="unwindFor:" id="Mjc-rc-5GB"/>
+                                    <action selector="doneButtonePressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="oJa-OD-LMK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -159,7 +158,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="kSz-cS-Tkn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="727.5" y="66.549295774647888"/>
         </scene>
