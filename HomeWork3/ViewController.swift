@@ -20,9 +20,12 @@ class ViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        colorView.layer.cornerRadius = 10
+        colorView.layer.cornerRadius = 15
+        navigationItem.hidesBackButton = true
         blendColor()
         setValue()
     }
@@ -32,6 +35,12 @@ class ViewController: UIViewController {
         blendColor()
         setValue()
     }
+    
+    @IBAction func doneButtonPressed() {
+        dismiss(animated: true)
+    }
+    
+    
     
     //MARK: - Private func
     private func blendColor() {
